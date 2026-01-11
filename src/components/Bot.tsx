@@ -1222,7 +1222,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
         setPendingActionData(action.data);
         setOpenFeedbackDialog(true);
       } else if (action) {
-        onSubmitResponse(action.data, '', type);
+        onSubmitResponse(action.data, elem.label, type);
       }
     } else {
       handleSubmit(elem.label, action);
