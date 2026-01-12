@@ -462,7 +462,7 @@ export const BotBubble = (props: Props) => {
             />
           )}
           {props.message.action && (
-            <div class="px-4 py-2 flex flex-row justify-start space-x-2">
+            <div class="py-1 flex flex-row justify-center space-x-2" style={props.showAvatar ? 'margin-left: -30; margin-right: -40px' : 'margin-right: -40px'}>
               <For each={props.message.action.elements || []}>
                 {(action) => {
                   return (
@@ -470,7 +470,7 @@ export const BotBubble = (props: Props) => {
                       {(action.type === 'approve-button' && action.label === 'Yes') || action.type === 'agentflowv2-approve-button' ? (
                         <button
                           type="button"
-                          class="px-4 py-2 font-medium text-green-600 border border-green-600 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300 flex items-center space-x-2"
+                          class="px-2 py-2 font-medium text-green-600 border border-green-600 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300 flex items-center space-x-2"
                           onClick={() => props.handleActionClick(action, props.message.action)}
                         >
                           <TickIcon />
@@ -480,7 +480,7 @@ export const BotBubble = (props: Props) => {
                       ) : (action.type === 'reject-button' && action.label === 'No') || action.type === 'agentflowv2-reject-button' ? (
                         <button
                           type="button"
-                          class="px-4 py-2 font-medium text-red-600 border border-red-600 rounded-full hover:bg-red-600 hover:text-white transition-colors duration-300 flex items-center space-x-2"
+                          class="px-2 py-2 font-medium text-red-600 border border-red-600 rounded-full hover:bg-red-600 hover:text-white transition-colors duration-300 flex items-center space-x-2"
                           onClick={() => props.handleActionClick(action, props.message.action)}
                         >
                           <XIcon isCurrentColor={true} />
